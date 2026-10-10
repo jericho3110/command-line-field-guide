@@ -1,0 +1,11 @@
+# Changelog
+
+Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions: [SemVer](https://semver.org/spec/v2.0.0.html).
+
+## [0.1.0] - 2026-10-11
+
+### Added
+- How Git works (snapshots and hashes, the three areas, branches, remotes, permanent history, ignore rules, line endings, identity).
+- The most-used commands, ranked from a real session's log, with flags, examples and the commands deliberately not used.
+- GitHub CLI and API (repos, visibility, security settings, CI, releases, scopes), the commit and publishing workflow, security (leaks, defenses, recovery, case studies), Windows surprises, learning path, glossary.
+- `python main.py check`: security scan and link check.
