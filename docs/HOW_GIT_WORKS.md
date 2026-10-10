@@ -30,15 +30,33 @@ default: 40 hex characters):
 | **commit** | one tree + parent commit(s) + author + message | "Add a guide to Git…" |
 | **tag** | a named pointer to a commit, optionally signed | `v0.1.0` |
 
-`git cat-file -p HEAD` shows the commit object itself (real output from
-this repo, shortened):
+`git cat-file -p HEAD` shows a commit object itself. Real output from this
+repository's first commit (`637bf6d`):
 
 ```text
-tree 3f1c…            <- the snapshot of the whole project
-author South Valley <93480907+jericho3110@users.noreply.github.com> 1791700000 +0800
-committer …
+$ git cat-file -p 637bf6d
+tree 140547b28aa14db5996a4e8635a58cb4e92ec929                                        <- the snapshot
+author South Valley <93480907+jericho3110@users.noreply.github.com> 1791650093 +0800   <- noreply email; seconds since 1970 + timezone
+committer South Valley <93480907+jericho3110@users.noreply.github.com> 1791650093 +0800
+
 Add a guide to Git and the commands used most
 ```
+
+The first commit has no `parent` line; every later one does. Following the
+`tree` hash shows the snapshot: one line per file (a **blob**) or folder
+(another **tree**):
+
+```text
+$ git cat-file -p 637bf6d^{tree}
+100644 blob 3931a6063f6bc180218a462af0313812d7f591f6  .gitattributes
+100644 blob eaba63869bbd18293559c87b50c31b8bafd024e3  README.md
+040000 tree 749ee6e84de51044126d5ac1bdaaba6326fc9636  docs
+100644 blob 3f3b0771ec878cefede0c09fc0908403fffdd1d3  main.py
+…
+```
+
+`100644` is a normal file, `040000` a folder (git separates the name with a tab, shown here as spaces). Notice the tree has the
+**names**; a blob is only content.
 
 **Why hashes matter:** the same content always gets the same name
 (*content addressing*). Change one byte anywhere and the hash of the file,
