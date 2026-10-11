@@ -2,6 +2,11 @@
 
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions: [SemVer](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+- MOVING_REPOS §6: how the reorganisation ended (script, all moves clean) and the in-place venv repair.
+
 ## [0.2.0] - 2026-10-11
 
 ### Added

@@ -118,6 +118,29 @@ fails halfway, you're left with two partial copies, which is how data gets
 corrupted. **What to do:** close the editor (or pause OneDrive sync), move,
 reopen, then check with `git status`.
 
+**How it ended:** a PowerShell script did the moves, run by the owner with
+the editor closed. It refused to start while the editor was running, checked
+that each repo was clean, did each move as **one rename**, and checked
+`git status` and the remote afterwards. All four moves worked: same HEAD, same
+remote, nothing to commit. (How the script was designed, line by line: the
+[windows-scripting-guide](https://github.com/jericho3110/windows-scripting-guide) repo.)
+
+The venv was the one casualty, as [section 2](#2-what-breaks-when-you-move-it-and-the-fixes) predicted. Its launchers
+(`pip.exe`, `yt-dlp.exe`…) still pointed at the old path and failed, and the
+script's rebuild step (`python -m venv --clear .venv`) didn't fix them;
+re-run by hand it failed with *Access is denied*, because the reopened
+editor was locking the folder again. The repair, done in place:
+
+```text
+python -m venv --upgrade .venv                       # rewrite pyvenv.cfg and activate scripts
+.venv/Scripts/python -m pip freeze --exclude-editable > freeze.txt
+.venv/Scripts/python -m pip install --force-reinstall --no-deps -r freeze.txt
+                                                     # same versions; regenerates every launcher
+```
+
+`--no-deps` with the frozen list reinstalls exactly what was there, so no
+version changes. Afterwards every launcher exited 0.
+
 ## 7. Exercises
 
 1. In a scratch folder, make a repo, commit, move the folder somewhere else, and run `git status` and `git log`. What changed?
