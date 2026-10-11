@@ -19,6 +19,9 @@
 | noreply email | GitHub's private commit address | [HOW §7](HOW_GIT_WORKS.md#7-who-you-are-author-identity) |
 | push protection | GitHub refuses pushes containing known secret formats | [SECURITY §2](SECURITY.md#2-defenses-in-order) |
 | scope (token) | a permission a login token has, e.g. `repo`, `delete_repo` | [GITHUB_CLI §4](GITHUB_CLI.md#4-logging-in-and-permissions) |
+| submodule / subtree | a repo inside a repo by reference / by copying its files and history in | [MOVING §3](MOVING_REPOS.md#3-the-real-mess-a-repo-inside-another-repo) |
+| regex | a pattern describing text | [REGEX](REGEX.md) |
+| pipeline / exit code | `a \| b` chains commands; the exit code says success (0) or failure | [SHELL](SHELL.md) |
 | BOM | an invisible marker some editors put at the start of a UTF-8 file | [FOUND_LIVE](FOUND_LIVE.md) |
 
 ## References

@@ -9,6 +9,8 @@ Practise in a scratch repo in a folder **you** choose (never inside a real proje
 | 3 | COMMANDS §3–5 | log formats, pickaxe, show, archive | find when a line first appeared with `git log -S` | how would you list every author email in a repo? |
 | 4 | [HOW_GIT_WORKS.md](HOW_GIT_WORKS.md) §5–7, [SECURITY.md](SECURITY.md) | permanent history, `.gitignore`, noreply identity | HOW_GIT_WORKS exercise 3 (the "deleted" secret) | why must a leaked key be revoked even after cleaning history? |
 | 5 | [GITHUB_CLI.md](GITHUB_CLI.md), [WORKFLOW.md](WORKFLOW.md) | gh, API calls, publishing checklist | create a private repo with `gh repo create`, then delete it | why is `delete_repo` not granted by default? |
+| 5b | [MOVING_REPOS.md](MOVING_REPOS.md) | moving repos, nested repos, submodule vs subtree, history transfer | its exercises 1–2 | why does moving a folder never need a Git command? |
+| 5c | [REGEX.md](REGEX.md), [SHELL.md](SHELL.md) | regex building blocks, grep flags, pipes, exit codes | REGEX exercises; rewrite one Bash pattern in PowerShell | why is `tests \| grep OK && commit` dangerous? |
 | 6 | COMMANDS §6, [FOUND_LIVE.md](FOUND_LIVE.md) | what not to do, and why | explain `--force` to a friend in two sentences | when would rewriting history ever be OK? |
 
 ## References

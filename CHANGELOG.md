@@ -2,6 +2,15 @@
 
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions: [SemVer](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0] - 2026-10-11
+
+### Added
+- `docs/MOVING_REPOS.md`: moving a repo into another folder safely, nested repos (submodule, subtree, merging histories), moving history between repos, `git mv`, and the found-live Windows folder lock.
+- `docs/REGEX.md` and `docs/SHELL.md`: the regular expressions and shell commands used most, counted from the session log, with gotchas.
+
+### Changed
+- Renamed from "Git Guide" to **Command-Line Field Guide** (repo `command-line-field-guide`): it now covers regex and the shell too.
+
 ## [0.1.0] - 2026-10-11
 
 ### Added
